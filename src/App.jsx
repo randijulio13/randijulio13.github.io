@@ -146,7 +146,7 @@ export default function App() {
   return (
     <>
       <Section className="h-screen bg-white">
-        <Title>
+        <Title className="hover:cursor-pointer">
           Hi, I'm <span className="text-red-500">RANDI YULIO FAJRI</span>
         </Title>
         <span className="text-center text-lg text-black">
@@ -186,7 +186,7 @@ export default function App() {
                     return (
                       <span
                         key={i}
-                        className="flex items-center gap-x-2 px-2 text-lg duration-300 hover:scale-110 hover:text-red-500"
+                        className="hover:cursor-pointer flex items-center gap-x-2 px-2 text-lg duration-300 hover:scale-110 hover:text-red-500"
                       >
                         <span className="text-2xl">{l.icon}</span> {l.title}
                       </span>
