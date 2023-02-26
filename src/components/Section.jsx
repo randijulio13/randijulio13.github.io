@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { forwardRef } from "react";
 
-export default function Section({children, className}) {
+const Section = forwardRef((props, ref) => {
+  const { children, className, ...otherProps } = props;
   return (
-    <section className={`${className} relative flex w-full flex-col items-center justify-center px-4`}>{children}</section>
-  )
-}
+    <section
+      {...otherProps}
+      ref={ref}
+      className={`${className} relative flex w-full flex-col items-center justify-center px-4`}
+    >
+      {children}
+    </section>
+  );
+});
+
+export default Section;
