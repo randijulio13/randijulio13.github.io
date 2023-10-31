@@ -1,21 +1,27 @@
 import React from "react";
 import {
-    SiBootstrap,
-    SiCodeigniter,
-    SiDocker,
-    SiExpress,
-    SiFirebase,
-    SiGit, SiJavascript,
-    SiLaravel, SiMariadb,
-    SiMongodb,
-    SiMysql,
-    SiPhp,
-    SiPostgresql,
-    SiRabbitmq,
-    SiReact,
-    SiTailwindcss,
-    SiVisualstudiocode,
-    SiVuedotjs
+  SiBootstrap,
+  SiCodeigniter,
+  SiDocker,
+  SiElasticsearch,
+  SiExpress,
+  SiFirebase,
+  SiGit,
+  SiGo,
+  SiJavascript,
+  SiLaravel,
+  SiMariadb,
+  SiMongodb,
+  SiMysql,
+  SiPhp,
+  SiPostgresql,
+  SiPython,
+  SiRabbitmq,
+  SiReact,
+  SiRedis,
+  SiTailwindcss,
+  SiVisualstudiocode,
+  SiVuedotjs,
 } from "react-icons/si";
 import Section from "./Section";
 import Title from "./Title";
@@ -27,14 +33,15 @@ export default function Skill() {
       list: [
         { icon: <SiPhp />, title: "PHP" },
         { icon: <SiJavascript />, title: "Javascript" },
+        { icon: <SiGo />, title: "Golang" },
       ],
     },
     {
       title: "BACKEND FRAMEWORK",
       list: [
         { icon: <SiLaravel />, title: "Laravel" },
-        { icon: <SiCodeigniter />, title: "Codeigniter" },
         { icon: <SiExpress />, title: "ExpressJS" },
+        { icon: <SiGo />, title: "GoFiber" },
       ],
     },
     {
@@ -58,6 +65,7 @@ export default function Skill() {
         { icon: <SiMysql />, title: "MySQL" },
         { icon: <SiPostgresql />, title: "PostgreSQL" },
         { icon: <SiMongodb />, title: "MongoDB" },
+        { icon: <SiRedis />, title: "Redis" },
       ],
     },
     {
@@ -68,6 +76,7 @@ export default function Skill() {
         { icon: <SiRabbitmq />, title: "RabbitMQ" },
         { icon: <SiFirebase />, title: "Firebase" },
         { icon: <SiGit />, title: "GIT Version Control" },
+        { icon: <SiElasticsearch />, title: "Elasticsearch" },
       ],
     },
   ];
