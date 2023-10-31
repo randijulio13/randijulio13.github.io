@@ -179,7 +179,7 @@ export default function Portfolio() {
             key={index}
           >
             {port.image && (
-              <div className="relative h-full scale-90 lg:basis-3/5">
+              <div className="relative h-full scale-90 lg:basis-3/5 hover:scale-105 duration-200">
                 {port.image.desktop && (
                   <img
                     src={port.image.desktop.src}
