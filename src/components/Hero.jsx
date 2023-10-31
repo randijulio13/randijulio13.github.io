@@ -40,7 +40,7 @@ export default function Hero() {
         A Fullstack Web Developer
       </span>
       <a
-        href="/RandiYulioFajri.pdf"
+        href="/NewRandiYulioFajri.pdf"
         target="_blank"
         download={true}
         className="my-6 rounded-full border border-black px-6 py-2 outline-none duration-300 hover:bg-black hover:px-8 hover:text-white"
