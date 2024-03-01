@@ -39,14 +39,14 @@ export default function Hero() {
       <span className="text-center text-lg text-black">
         A Fullstack Web Developer
       </span>
-      {/* <a
-        href="/NewRandiYulioFajri.pdf"
+      <a
+        href="/RandiYulioFajri.pdf"
         target="_blank"
         download={true}
         className="my-6 rounded-full border border-black px-6 py-2 outline-none duration-300 hover:bg-black hover:px-8 hover:text-white"
       >
         Download CV
-      </a> */}
+      </a>
       <div className="flex gap-x-2">
         {contacts.map((contact, index) => {
           return (
