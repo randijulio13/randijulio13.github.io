@@ -94,82 +94,85 @@ export default function Portfolio() {
         },
       },
     },
-    {
-      title: "IndoRentals",
-      type: "Company Product",
-      description:
-        "A Software as a Service that verifies borrowers' data through E-KYC (onboarding process). This app is built using the Laravel Framework.",
-      techstack: [
-        { name: "Laravel", icon: <SiLaravel /> },
-        { name: "MySQL", icon: <SiMysql /> },
-      ],
-      image: {
-        desktop: {
-          src: "/indorentals_desktop.png",
-          alt: "indorentals_desktop",
-        },
-        mobile: {
-          src: "/indorentals_mobile.png",
-          alt: "indorentals_mobile",
-        },
-      },
-    },
-    {
-      title: "Realviux",
-      type: "Company Product",
-      description:
-        "A visualization platform to build your dashboard fast and easily with rich options visualization, connect any data source, and customize queries with SQL editor which will make it easy to integrate & explore data and available with alert notification & scheduler report. This app is built using ReactJS Frontend and AdonisJS Backend.",
-      techstack: [
-        { name: "ReactJS", icon: <SiReact /> },
-        { name: "AdonisJS", icon: <SiAdonisjs /> },
-        { name: "AntDesign", icon: <SiAntdesign /> },
-        { name: "PostgreSQL", icon: <SiPostgresql /> },
-      ],
-      image: {
-        desktop: {
-          src: "/realviux_desktop.png",
-          alt: "realviux_desktop",
-        },
-      },
-    },
   ];
 
-  portfolios.push(
-    {
-      title: "[ non disclosure agreement ]",
-      type: "Company Product",
-      description:
-        "A Software as a Service that verifies customer data through E-KYC (onboarding process), checks customer Credit Score, and generates Digital Signature Certificates. This app is built using the Laravel Framework.",
-      techstack: [
-        { name: "Laravel", icon: <SiLaravel /> },
-        { name: "MySQL", icon: <SiMysql /> },
-      ],
-    },
-    {
-      title: "[ non disclosure agreement ]",
-      type: "Company Project",
-      description:
-        "A microservice application with an event-driven architecture, utilizing RabbitMQ for data transfer, designed to validate company employee data. This app is built using the Laravel Framework.",
-      techstack: [
-        { name: "Laravel", icon: <SiLaravel /> },
-        { name: "MySQL", icon: <SiMysql /> },
-        { name: "RabbitMQ", icon: <SiRabbitmq /> },
-      ],
-    },
-    {
-      title: "[ non disclosure agreement ]",
-      type: "Company Project",
-      description:
-        "A web application with a primary feature that I cannot disclose, alongside other complex functionalities such as activity logs, user management, client management, and role management. This app is built using the Laravel Framework and Livewire.",
-      techstack: [
-        { name: "Laravel", icon: <SiLaravel /> },
-        { name: "Livewire", icon: <SiLaravel /> },
-        { name: "MySQL", icon: <SiMysql /> },
-        { name: "RabbitMQ", icon: <SiRabbitmq /> },
-        { name: "Elasticsearch", icon: <SiElasticsearch /> },
-      ],
-    }
-  );
+  // portfolios.push(
+  //   {
+  //     title: "IndoRentals",
+  //     type: "Company Product",
+  //     description:
+  //       "A Software as a Service that verifies borrowers' data through E-KYC (onboarding process). This app is built using the Laravel Framework.",
+  //     techstack: [
+  //       { name: "Laravel", icon: <SiLaravel /> },
+  //       { name: "MySQL", icon: <SiMysql /> },
+  //     ],
+  //     image: {
+  //       desktop: {
+  //         src: "/indorentals_desktop.png",
+  //         alt: "indorentals_desktop",
+  //       },
+  //       mobile: {
+  //         src: "/indorentals_mobile.png",
+  //         alt: "indorentals_mobile",
+  //       },
+  //     },
+  //   },
+  //   {
+  //     title: "Realviux",
+  //     type: "Company Product",
+  //     description:
+  //       "A visualization platform to build your dashboard fast and easily with rich options visualization, connect any data source, and customize queries with SQL editor which will make it easy to integrate & explore data and available with alert notification & scheduler report. This app is built using ReactJS Frontend and AdonisJS Backend.",
+  //     techstack: [
+  //       { name: "ReactJS", icon: <SiReact /> },
+  //       { name: "AdonisJS", icon: <SiAdonisjs /> },
+  //       { name: "AntDesign", icon: <SiAntdesign /> },
+  //       { name: "PostgreSQL", icon: <SiPostgresql /> },
+  //     ],
+  //     image: {
+  //       desktop: {
+  //         src: "/realviux_desktop.png",
+  //         alt: "realviux_desktop",
+  //       },
+  //     },
+  //   }
+  // );
+
+  // portfolios.push(
+  //   {
+  //     title: "[ non disclosure agreement ]",
+  //     type: "Company Product",
+  //     description:
+  //       "A Software as a Service that verifies customer data through E-KYC (onboarding process), checks customer Credit Score, and generates Digital Signature Certificates. This app is built using the Laravel Framework.",
+  //     techstack: [
+  //       { name: "Laravel", icon: <SiLaravel /> },
+  //       { name: "MySQL", icon: <SiMysql /> },
+  //     ],
+  //   },
+  //   {
+  //     title: "[ non disclosure agreement ]",
+  //     type: "Company Project",
+  //     description:
+  //       "A microservice application with an event-driven architecture, utilizing RabbitMQ for data transfer, designed to validate company employee data. This app is built using the Laravel Framework.",
+  //     techstack: [
+  //       { name: "Laravel", icon: <SiLaravel /> },
+  //       { name: "MySQL", icon: <SiMysql /> },
+  //       { name: "RabbitMQ", icon: <SiRabbitmq /> },
+  //     ],
+  //   },
+  //   {
+  //     title: "[ non disclosure agreement ]",
+  //     type: "Company Project",
+  //     description:
+  //       "A web application with a primary feature that I cannot disclose, alongside other complex functionalities such as activity logs, user management, client management, and role management. This app is built using the Laravel Framework and Livewire.",
+  //     techstack: [
+  //       { name: "Laravel", icon: <SiLaravel /> },
+  //       { name: "Livewire", icon: <SiLaravel /> },
+  //       { name: "MySQL", icon: <SiMysql /> },
+  //       { name: "RabbitMQ", icon: <SiRabbitmq /> },
+  //       { name: "Elasticsearch", icon: <SiElasticsearch /> },
+  //     ],
+  //   }
+  // );
 
   return (
     <Section className="min-h-screen bg-black py-20" ref={portRef}>
