@@ -18,19 +18,19 @@ export default function Experience() {
         "Presenting progress and work in meetings with clients and management.",
       ],
     },
-    {
-      company: "PT. Immobi Solusi Prima",
-      period: "Feb 2023 - Mei 2023",
-      position: "Fullstack Developer",
-      type: "Parttime",
-      based: "South Jakarta",
-      jobDesc: [
-        "Discussing project objectives with the project manager and development team.",
-        "Building, managing and maintaining web based applications.",
-        "Identifying and troubleshooting issues in implementation and debug builds.",
-        "Conducting testing to ensure functionality for both users and the backend.",
-      ],
-    },
+    // {
+    //   company: "PT. Immobi Solusi Prima",
+    //   period: "Feb 2023 - Mei 2023",
+    //   position: "Fullstack Developer",
+    //   type: "Parttime",
+    //   based: "South Jakarta",
+    //   jobDesc: [
+    //     "Discussing project objectives with the project manager and development team.",
+    //     "Building, managing and maintaining web based applications.",
+    //     "Identifying and troubleshooting issues in implementation and debug builds.",
+    //     "Conducting testing to ensure functionality for both users and the backend.",
+    //   ],
+    // },
     {
       company: "PT. Hedo Global Technology",
       period: "Jan 2021 - Dec 2021",

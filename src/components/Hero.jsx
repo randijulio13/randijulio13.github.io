@@ -20,16 +20,16 @@ export default function Hero() {
       icon: <SiGithub />,
       link: "https://github.com/randijulio13",
     },
-    {
-      title: "Instagram",
-      icon: <SiInstagram />,
-      link: "https://instagram.com/randijuliofajri",
-    },
-    {
-      title: "Instagram",
-      icon: <RiMailSendLine />,
-      link: "mailto:randijulio13@gmail.com",
-    },
+    // {
+    //   title: "Instagram",
+    //   icon: <SiInstagram />,
+    //   link: "https://instagram.com/randijuliofajri",
+    // },
+    // {
+    //   title: "Instagram",
+    //   icon: <RiMailSendLine />,
+    //   link: "mailto:randijulio13@gmail.com",
+    // },
   ];
   return (
     <Section className="h-screen bg-white">
@@ -39,14 +39,14 @@ export default function Hero() {
       <span className="text-center text-lg text-black">
         A Fullstack Web Developer
       </span>
-      <a
+      {/* <a
         href="/NewRandiYulioFajri.pdf"
         target="_blank"
         download={true}
         className="my-6 rounded-full border border-black px-6 py-2 outline-none duration-300 hover:bg-black hover:px-8 hover:text-white"
       >
         Download CV
-      </a>
+      </a> */}
       <div className="flex gap-x-2">
         {contacts.map((contact, index) => {
           return (

@@ -76,8 +76,7 @@ export default function Portfolio() {
     {
       title: "Digital Wedding Invitation",
       type: "Side Project",
-      description:
-        "A digital wedding invitation with Guest list management.",
+      description: "A digital wedding invitation with Guest list management.",
       techstack: [
         { name: "ReactJS", icon: <SiReact /> },
         { name: "Firebase", icon: <SiFirebase /> },
@@ -133,6 +132,9 @@ export default function Portfolio() {
         },
       },
     },
+  ];
+
+  portfolios.push(
     {
       title: "[ non disclosure agreement ]",
       type: "Company Product",
@@ -166,8 +168,8 @@ export default function Portfolio() {
         { name: "RabbitMQ", icon: <SiRabbitmq /> },
         { name: "Elasticsearch", icon: <SiElasticsearch /> },
       ],
-    },
-  ];
+    }
+  );
 
   return (
     <Section className="min-h-screen bg-black py-20" ref={portRef}>
@@ -179,7 +181,7 @@ export default function Portfolio() {
             key={index}
           >
             {port.image && (
-              <div className="relative h-full scale-90 lg:basis-3/5 hover:scale-105 duration-200">
+              <div className="relative h-full scale-90 duration-200 hover:scale-105 lg:basis-3/5">
                 {port.image.desktop && (
                   <img
                     src={port.image.desktop.src}
