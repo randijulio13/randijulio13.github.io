@@ -19,7 +19,7 @@ const HeroSection = () => {
     return (
 
         <div className="grid lg:grid-cols-2 h-dvh gap-4">
-            <div className="flex items-center">
+            <div className="flex items-end lg:items-center">
                 <div>
                     <div className="flex">
                         <RevealAnimation color="danger" slide>

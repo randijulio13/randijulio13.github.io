@@ -11,9 +11,15 @@ const RevealAnimationDirection = Object.freeze({
 type RevealAnimationDirectionType = typeof RevealAnimationDirection[keyof typeof RevealAnimationDirection]
 
 
-interface RevealAnimationProps { children: React.ReactNode, direction?: RevealAnimationDirectionType, color?: string, slide?: boolean }
+interface RevealAnimationProps {
+    children: React.ReactNode,
+    direction?: RevealAnimationDirectionType,
+    color?: string,
+    slide?: boolean,
+    delay?: number
+}
 
-const RevealAnimation = ({ children, direction = RevealAnimationDirection.RIGHT, color = "primary", slide = false }: RevealAnimationProps) => {
+const RevealAnimation = ({ children, direction = RevealAnimationDirection.RIGHT, color = "primary", slide = false, delay = 0 }: RevealAnimationProps) => {
     const ref = useRef<HTMLDivElement>(null)
     const isInView = useInView(ref, { once: false })
 
@@ -47,7 +53,7 @@ const RevealAnimation = ({ children, direction = RevealAnimationDirection.RIGHT,
                         y: 0
                     }
                 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.5, delay: delay, ease: 'easeIn' }}
                 initial="hidden"
                 animate={mainControl}
             >
@@ -70,7 +76,7 @@ const RevealAnimation = ({ children, direction = RevealAnimationDirection.RIGHT,
                         right: '100%'
                     },
                 }}
-                transition={{ duration: 0.5, ease: 'easeIn' }}
+                transition={{ duration: 0.5, ease: 'easeIn', delay }}
                 initial={direction === RevealAnimationDirection.RIGHT ? 'hiddenRight' : 'hiddenLeft'}
                 animate={slideControl}
             />}
