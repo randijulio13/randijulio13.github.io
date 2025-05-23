@@ -7,7 +7,7 @@ const HeroSection = () => {
         name: "Randi Yulio Fajri",
         email: "randijulio13@gmail.com",
         info: [
-            { value: 3, label: "Years of Experience" },
+            { value: 4, label: "Years of Experience" },
             { value: 10, label: "Completed Projects" },
         ]
     }
@@ -29,12 +29,12 @@ const HeroSection = () => {
                     </div>
                     <RevealAnimation slide>
                         <p className="my-4">
-                            Hi! I'm <strong>Randi</strong>. A passionate Fullstack Developer with 3+ years of experience in building scalable, high-performance, and user-centric web applications — from crafting seamless frontend interfaces to developing robust backend systems.
+                            Hi! I'm <strong>Randi</strong>. A passionate Fullstack Developer with 4+ years of experience in building scalable, high-performance, and user-centric web applications — from crafting seamless frontend interfaces to developing robust backend systems.
                         </p>
                     </RevealAnimation>
                     <RevealAnimation slide>
                         <div className="h-10 flex items-center">
-                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI" className="bg-danger text-surface text-lg px-8 py-2 cursor-pointer duration-200 hover:px-14 uppercase font-[Anton]">resume</a>
+                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-danger text-surface text-lg px-8 py-2 cursor-pointer duration-200 hover:px-14 uppercase font-[Anton]">resume</a>
                         </div>
                     </RevealAnimation>
 
