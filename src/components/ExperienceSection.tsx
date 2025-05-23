@@ -8,7 +8,7 @@ const experiences = [
         "status": "Fulltime",
         "company": "OXY Creative",
         "location": "South Jakarta, Indonesia",
-        "description": "Led frontend development for Boyer Inc., a US-based heavy equipment company, by building a web-based inventory management system using Next.js. Collaborated with QA teams and stakeholders for iterative feature improvements and bug resolution. Designed and implemented a server observability suite using Grafana, Alloy, Loki, and Wazuh Stack containerized with Docker for infrastructure monitoring.",
+        "description": "Led the development of a web-based inventory management interface using Next.js, ensuring usability and responsiveness. Collaborated with QA and stakeholders for iterative feature improvements. Implemented a complete infrastructure observability system using modern monitoring tools and containerized deployment.",
         "startDate": "Sep 2024",
         "endDate": "Present"
     },
@@ -17,7 +17,7 @@ const experiences = [
         "status": "Fulltime",
         "company": "PT. Immobi Solusi Prima",
         "location": "South Jakarta, Indonesia",
-        "description": "Developed the frontend of AVP, a centralized dashboard platform used by Telkomsel, utilizing Next.js and Ant Design. Built reusable components for iframe embedding with dynamic behavior. Worked with designers and product owners to translate mockups into responsive, accessible UI and integrated backend services for SSO and access control features.",
+        "description": "Built dynamic, component-based user interfaces for an internal dashboard platform using Next.js and Ant Design. Translated UI/UX mockups into responsive implementations. Developed features including iframe integration, SSO, and access control mechanisms for secure and seamless user experience.",
         "startDate": "Mar 2024",
         "endDate": "Jun 2025"
     },
@@ -26,7 +26,7 @@ const experiences = [
         "status": "Fulltime",
         "company": "PT. Trisan Esa Cipta",
         "location": "Palembang, Indonesia",
-        "description": "Developed an internal management system for a property development company, covering housing catalog, construction tracking, and sales processing. Automated workflows for payroll, material inventory management, and order processing. Implemented complex backend logic to maintain data integrity across departments.",
+        "description": "Developed an internal system for managing property development workflows, covering catalogs, construction progress, and sales. Built modules for inventory tracking, payroll scheduling, and procurement. Ensured consistency and integrity across multiple departments through well-defined backend logic.",
         "startDate": "Mar 2024",
         "endDate": "Apr 2025"
     },
@@ -35,7 +35,7 @@ const experiences = [
         "status": "Fulltime",
         "company": "OXY Creative",
         "location": "South Jakarta, Indonesia",
-        "description": "Developed onboarding and identity verification applications such as NeoDigi and Seken, integrating with Indonesia’s civil registry (Dukcapil) and BI credit checking. Designed an event-driven microservice data cleansing system using RabbitMQ to detect and flag duplicates. Focused on scalability and fault tolerance in handling millions of records.",
+        "description": "Engineered identity verification and onboarding solutions with civil registry and credit checking integrations. Designed asynchronous microservices for large-scale data processing and duplication detection. Prioritized scalability and fault tolerance in high-volume environments.",
         "startDate": "Feb 2022",
         "endDate": "Mar 2024"
     },
@@ -44,11 +44,12 @@ const experiences = [
         "status": "Fulltime",
         "company": "PT. Hedo Global Technology",
         "location": "Palembang, Indonesia",
-        "description": "Developed and maintained a warehouse inventory system including stock tracking, item movement, order management, and reporting. Integrated real-time stock synchronization with an external e-commerce platform. Contributed to backend optimization and refactoring to improve performance and maintainability.",
+        "description": "Built and maintained a warehouse management system with features like inventory tracking, order processing, and reporting. Synchronized stock data in real-time with external sales platforms. Optimized legacy backend systems for better performance and maintainability.",
         "startDate": "Feb 2021",
         "endDate": "Feb 2022"
     }
 ]
+
 
 
 
