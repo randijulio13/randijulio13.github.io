@@ -125,8 +125,8 @@ const StackSection = () => {
         <div className="py-16 space-y-16">
             <RevealAnimation slide>
 
-                <div className="flex items-center gap-2 lg:justify-start justify-center">
-                    <FaReact className="animate-spin [animation-duration:10s] text-4xl" /><h4 className="uppercase text-xl text-surface">Stack Knowledge</h4>
+                <div className="flex items-center gap-2">
+                    <FaReact className="animate-spin [animation-duration:10s] text-4xl" /><h4 className="uppercase text-xl text-surface">Technical Skill & Knowledge</h4>
                 </div>
             </RevealAnimation>
             <div className="flex flex-col space-y-32 lg:space-y-32">

@@ -1,16 +1,20 @@
+import { FaDownload } from "react-icons/fa"
 import RevealAnimation from "./RevealAnimation"
+
+const yearOfExperience = new Date().getFullYear() - 2021
+
+const profile = {
+    name: "Randi Yulio Fajri",
+    email: "randijulio13@gmail.com",
+    info: [
+        { value: yearOfExperience, label: "Years of Experience" },
+        { value: 10, label: "Completed Projects" },
+    ]
+}
 
 const HeroSection = () => {
 
 
-    const profile = {
-        name: "Randi Yulio Fajri",
-        email: "randijulio13@gmail.com",
-        info: [
-            { value: 4, label: "Years of Experience" },
-            { value: 10, label: "Completed Projects" },
-        ]
-    }
 
     return (
 
@@ -29,12 +33,15 @@ const HeroSection = () => {
                     </div>
                     <RevealAnimation slide>
                         <p className="my-4">
-                            Hi! I'm <strong>Randi</strong>. A passionate Fullstack Developer with 4+ years of experience in building scalable, high-performance, and user-centric web applications — from crafting seamless frontend interfaces to developing robust backend systems.
+                            Hi! I'm <strong>{profile.name}</strong>. A passionate Fullstack Developer with {yearOfExperience}+ years of experience in building scalable, high-performance, and user-centric web applications — from crafting seamless frontend interfaces to developing robust backend systems.
                         </p>
                     </RevealAnimation>
                     <RevealAnimation slide>
                         <div className="h-10 flex items-center">
-                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-danger text-surface text-lg px-8 py-2 cursor-pointer duration-200 hover:px-14 uppercase font-[Anton]">resume</a>
+                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-danger text-surface text-lg ps-7 pe-8 py-2 cursor-pointer duration-200 hover:pe-14 hover:ps-12 uppercase font-[Anton] flex items-center justify-center gap-2">
+                                <FaDownload />
+                                resume
+                            </a>
                         </div>
                     </RevealAnimation>
 
@@ -43,12 +50,12 @@ const HeroSection = () => {
             <div>
                 <div className="flex flex-col items-start lg:items-end lg:h-full w-full gap-8 justify-center">
                     {profile.info.map((info, index) => (
-                        <RevealAnimation slide>
-                            <div key={index} className="flex flex-col items-center lg:items-end duration-200 hover:scale-105">
+                        <div key={index} className="flex flex-col items-center lg:items-end duration-200 hover:scale-105">
+                            <RevealAnimation slide>
                                 <h1 className="text-danger text-3xl font-bold font-[Anton]">{info.value}+</h1>
                                 <p className="text-surface font-light">{info.label}</p>
-                            </div>
-                        </RevealAnimation>
+                            </RevealAnimation>
+                        </div>
                     ))}
                 </div>
             </div>
