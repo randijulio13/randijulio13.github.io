@@ -4,7 +4,7 @@ import RevealAnimation from "./RevealAnimation"
 
 const experiences = [
     {
-        "title": "Frontend",
+        "title": "Web Engineer",
         "status": "Fulltime",
         "company": "OXY Creative",
         "location": "South Jakarta, Indonesia",
