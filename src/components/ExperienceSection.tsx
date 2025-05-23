@@ -1,4 +1,5 @@
 import { FaReact } from "react-icons/fa"
+import RevealAnimation from "./RevealAnimation"
 
 
 const experiences = [
@@ -54,24 +55,30 @@ const experiences = [
 const ExperienceSection = () => {
     return (
         <div className="py-16 space-y-16">
-            <div className="flex items-center gap-2">
-                <FaReact className="animate-spin [animation-duration:10s] text-4xl" /><h4 className="uppercase text-xl text-surface">
-                    Work Experience
-                </h4>
-            </div>
+            <RevealAnimation slide>
+                <div className="flex items-center gap-2">
+                    <FaReact className="animate-spin [animation-duration:10s] text-4xl" /><h4 className="uppercase text-xl text-surface">
+                        Work Experience
+                    </h4>
+                </div>
+            </RevealAnimation>
             <div className="flex flex-col space-y-32">
                 {experiences.map((experience, index) => {
                     return <div className="grid grid-cols-5 space-y-8 lg:space-y-0" key={index}>
                         <div className="text-surface space-y-2 flex flex-col col-span-5 lg:col-span-2">
-                            <span className="text-surface">{experience.company}</span>
-                            <h1 className="uppercase font-[Anton] text-5xl text-surface">{experience.title}</h1>
-                            <span className="text-surface">{experience.location}</span>
+                            <RevealAnimation slide>
+                                <span className="text-surface">{experience.company}</span>
+                                <h1 className="uppercase font-[Anton] text-5xl text-surface">{experience.title}</h1>
+                                <span className="text-surface">{experience.location}</span>
+                            </RevealAnimation>
                         </div>
                         <div className="col-span-5 lg:col-span-3 flex flex-col gap-2">
-                            <div>
-                                <span className="font-semibold text-surface ">{experience.status} | {experience.startDate} - {experience.endDate}</span>
-                            </div>
-                            <p className="text-surface tracking-wider text-xl">{experience.description}</p>
+                            <RevealAnimation slide>
+                                <div>
+                                    <span className="font-semibold text-surface ">{experience.status} | {experience.startDate} - {experience.endDate}</span>
+                                </div>
+                                <p className="text-surface tracking-wider text-xl">{experience.description}</p>
+                            </RevealAnimation>
                         </div>
                     </div>
                 })}

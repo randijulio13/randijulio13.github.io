@@ -1,4 +1,3 @@
-
 interface SectionWrapperProps {
     children: React.ReactNode
 }

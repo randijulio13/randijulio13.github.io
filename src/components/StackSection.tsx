@@ -4,6 +4,7 @@ import { DiMysql, DiRedis } from "react-icons/di";
 import { FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
 import { RiSvelteFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiAdonisjs, SiDocker, SiExpress, SiGit, SiGrafana, SiJavascript, SiMinio, SiMongodb, SiNestjs, SiNextdotjs, SiNodedotjs, SiNuxtdotjs, SiPhp, SiRabbitmq, SiTypescript } from "react-icons/si";
+import RevealAnimation from "./RevealAnimation";
 
 const stacks = [{
     title: 'frontend',
@@ -122,24 +123,37 @@ const stacks = [{
 const StackSection = () => {
     return (
         <div className="py-16 space-y-16">
-            <div className="flex items-center gap-2 lg:justify-start justify-center">
-                <FaReact className="animate-spin [animation-duration:10s] text-4xl" /><h4 className="uppercase text-xl text-surface">Stack Knowledge</h4>
-            </div>
+            <RevealAnimation slide>
+
+                <div className="flex items-center gap-2 lg:justify-start justify-center">
+                    <FaReact className="animate-spin [animation-duration:10s] text-4xl" /><h4 className="uppercase text-xl text-surface">Stack Knowledge</h4>
+                </div>
+            </RevealAnimation>
             <div className="flex flex-col space-y-32 lg:space-y-32">
                 {stacks.map((stack, index) =>
-                    <div key={index} className="grid grid-cols-5 space-y-16 lg:space-y-0">
-                        <h1 className="col-span-5 lg:col-span-2 uppercase font-[Anton] text-5xl text-surface">{stack.title}</h1>
+                    <div className="grid grid-cols-5 space-y-16 lg:space-y-0" key={index}>
+                        <div className="col-span-5 lg:col-span-2">
+
+                            <div className="flex">
+                                <RevealAnimation slide>
+                                    <span className="uppercase font-[Anton] text-5xl text-surface">{stack.title}</span>
+                                </RevealAnimation>
+                            </div>
+                        </div>
                         <div className="col-span-5 lg:col-span-3">
                             <div className="flex gap-12 flex-wrap">
                                 {stack.items.map((item, index) => {
-                                    return <div className="flex gap-2 items-center" key={index}>
-                                        {item.logo}
-                                        <span className="text-2xl lg:text-3xl">{item.label}</span>
-                                    </div>
+                                    return <RevealAnimation slide>
+                                        <div className="flex gap-2 items-center" key={index}>
+                                            {item.logo}
+                                            <span className="text-2xl lg:text-3xl">{item.label}</span>
+                                        </div>
+                                    </RevealAnimation>
                                 })}
                             </div>
                         </div>
-                    </div>)}
+                    </div>
+                )}
             </div>
         </div>
     )
