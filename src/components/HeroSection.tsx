@@ -38,7 +38,7 @@ const HeroSection = () => {
                     </RevealAnimation>
                     <RevealAnimation slide>
                         <div className="h-10 flex items-center">
-                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-accent text-surface text-lg ps-7 pe-8 py-2 cursor-pointer duration-200 hover:pe-14 hover:ps-12 uppercase font-[Anton] flex items-center justify-center gap-2">
+                            <a href="./cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-accent text-surface text-lg ps-7 pe-8 py-2 cursor-pointer duration-200 hover:pe-14 hover:ps-12 uppercase font-[Anton] flex items-center justify-center gap-2">
                                 <FaDownload />
                                 resume
                             </a>
