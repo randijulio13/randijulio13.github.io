@@ -4,7 +4,7 @@ const FooterSection = () => {
     return (
 
         <div className="snap-end relative">
-            <div className="w-full py-8 text-surface tracking-wide gap-4 flex flex-col items-center justify-center">
+            <div className="w-full py-16 text-surface tracking-wide gap-6 flex flex-col items-center justify-center">
                 <span className="gap-2 flex items-center justify-center">Want to reach me out? <FaEnvelope />  email me at:</span>
                 <a className="font-[Anton] text-4xl text-surface" href="mailto:randijulio13@gmail.com">randijulio13@gmail.com</a>
                 <div className="flex gap-4">

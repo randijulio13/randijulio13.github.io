@@ -3,7 +3,7 @@ import { BsBootstrapFill } from "react-icons/bs";
 import { DiMysql, DiRedis } from "react-icons/di";
 import { FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
 import { RiSvelteFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiAdonisjs, SiDocker, SiExpress, SiGit, SiGrafana, SiJavascript, SiMinio, SiMongodb, SiNestjs, SiNextdotjs, SiNodedotjs, SiNuxtdotjs, SiPhp, SiRabbitmq, SiRedis, SiTypescript } from "react-icons/si";
+import { SiAdonisjs, SiDocker, SiExpress, SiGit, SiGrafana, SiJavascript, SiMinio, SiMongodb, SiNestjs, SiNextdotjs, SiNodedotjs, SiNuxtdotjs, SiPhp, SiRabbitmq, SiTypescript } from "react-icons/si";
 import { Fragment } from "react/jsx-runtime";
 
 const stacks = [{

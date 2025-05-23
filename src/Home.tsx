@@ -10,7 +10,6 @@ import ExperienceSection from "./components/ExperienceSection"
 import ScrollIndicator from "./components/ScrollIndicator"
 import FooterSection from "./components/FooterSection"
 
-
 const Home = () => {
     const mainRef = useRef<HTMLDivElement>(null);
 
