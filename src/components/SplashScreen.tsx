@@ -13,7 +13,7 @@ const SplashScreen = () => {
                 {[...Array(4)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="bg-[#090e19] w-full h-full"
+                        className="bg-secondary w-full h-full"
                         variants={{
                             hidden: {
                                 y: '100%',
@@ -35,7 +35,7 @@ const SplashScreen = () => {
                 {[...Array(12)].map((_, i) => (
                     <motion.div
                         key={i}
-                        className="bg-[#090e19] w-full h-full"
+                        className="bg-secondary w-full h-full"
                         variants={{
                             hidden: {
                                 y: '100%',

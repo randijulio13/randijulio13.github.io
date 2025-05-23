@@ -28,7 +28,7 @@ const ScrollIndicator = ({ mainRef }: ScrollIndicatorProps) => {
     return (
         <div className="absolute top-[50%] translate-y-[-50%] end-10 z-40 hidden lg:block">
             <div className="w-1.5 bg-secondary rounded-full h-24 mb-4 overflow-hidden">
-                <div className={`bg-danger w-1.5 rounded-full`} style={{ height: Math.ceil(scrollWidth) + '%' }}></div>
+                <div className={`bg-accent w-1.5 rounded-full`} style={{ height: Math.ceil(scrollWidth) + '%' }}></div>
             </div>
         </div>
     )

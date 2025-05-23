@@ -43,10 +43,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   --color-primary: #0e131f; /* Feldgrau - warna utama */
+  --color-secondary: #090e19; /* Cool gray - pelengkap */
   --color-danger: #f8333c; /* Imperial red - untuk error/alert */
-  --color-secondary: #38405f; /* Cool gray - pelengkap */
   --color-surface: #eadeda; /* Columbia blue - latar belakang */
-  --color-accent: #ffd400;
+  --color-accent: #f8333c;
 }
 
 :root {

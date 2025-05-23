@@ -23,7 +23,7 @@ const HeroSection = () => {
                 <div>
                     <div className="flex">
                         <RevealAnimation color="danger" slide>
-                            <h1 className="uppercase font-black text-7xl font-[Anton] tracking-wide text-danger">FullStack</h1>
+                            <h1 className="uppercase font-black text-7xl font-[Anton] tracking-wide text-accent">FullStack</h1>
                         </RevealAnimation>
                     </div>
                     <div className="flex">
@@ -38,7 +38,7 @@ const HeroSection = () => {
                     </RevealAnimation>
                     <RevealAnimation slide>
                         <div className="h-10 flex items-center">
-                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-danger text-surface text-lg ps-7 pe-8 py-2 cursor-pointer duration-200 hover:pe-14 hover:ps-12 uppercase font-[Anton] flex items-center justify-center gap-2">
+                            <a href="../../public/cv.pdf" download="CV_RANDI_YULIO_FAJRI.pdf" className="bg-accent text-surface text-lg ps-7 pe-8 py-2 cursor-pointer duration-200 hover:pe-14 hover:ps-12 uppercase font-[Anton] flex items-center justify-center gap-2">
                                 <FaDownload />
                                 resume
                             </a>
@@ -52,7 +52,7 @@ const HeroSection = () => {
                     {profile.info.map((info, index) => (
                         <div key={index} className="flex flex-col items-center lg:items-end duration-200 hover:scale-105">
                             <RevealAnimation slide>
-                                <h1 className="text-danger text-3xl font-bold font-[Anton]">{info.value}+</h1>
+                                <h1 className="text-accent text-3xl font-bold font-[Anton]">{info.value}+</h1>
                                 <p className="text-surface font-light">{info.label}</p>
                             </RevealAnimation>
                         </div>
