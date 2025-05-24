@@ -15,6 +15,7 @@ const Home = () => {
     const mainRef = useRef<HTMLDivElement>(null);
 
 
+
     return (
         <>
             <SplashScreen />
@@ -24,7 +25,7 @@ const Home = () => {
                     color="white"
                     snowflakeCount={10}
                 />
-                <Lottie animationData={LottieScroll} loop={true} className='absolute z-10 opacity-1 top-[50%] start-[50%] translate-[-50%] h-[100vh] pointer-events-none' />
+                <Lottie animationData={LottieScroll} loop={true} className='absolute z-10 opacity-1 inset-0 h-dvh pointer-events-none' />
                 <SectionWrapper>
                     <HeroSection />
                 </SectionWrapper>
@@ -33,8 +34,6 @@ const Home = () => {
                 </SectionWrapper>
                 <SectionWrapper>
                     <StackSection />
-                </SectionWrapper>
-                <SectionWrapper>
                     <ExperienceSection />
                 </SectionWrapper>
                 <FooterSection />

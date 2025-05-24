@@ -1,4 +1,5 @@
-import { useEffect, useState, type RefObject } from "react";
+import { useMotionValueEvent, useScroll } from "motion/react";
+import { useState, type RefObject } from "react";
 
 interface ScrollIndicatorProps {
     mainRef: RefObject<HTMLDivElement | null>
@@ -8,22 +9,13 @@ const ScrollIndicator = ({ mainRef }: ScrollIndicatorProps) => {
 
     const [scrollWidth, setScrollWidth] = useState(0);
 
-    useEffect(() => {
-        const element = mainRef.current;
-        if (!element) return;
+    const scroll = useScroll({
+        container: mainRef,
+    })
 
-        const handleScroll = () => {
-            const scrollTop = element.scrollTop;
-            const scrollHeight = element.scrollHeight - element.clientHeight;
-            const scrolled = (scrollTop / scrollHeight) * 100;
-            setScrollWidth(scrolled);
-        };
-
-        element.addEventListener("scroll", handleScroll);
-        return () => {
-            element.removeEventListener("scroll", handleScroll);
-        };
-    }, [mainRef]);
+    useMotionValueEvent(scroll.scrollYProgress, "change", (latest) => {
+        setScrollWidth(latest * 100)
+    })
 
     return (
         <div className="absolute top-[50%] translate-y-[-50%] end-10 z-40 hidden lg:block">
