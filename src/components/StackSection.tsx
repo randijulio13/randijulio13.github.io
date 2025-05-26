@@ -5,6 +5,7 @@ import { FaLaravel, FaReact, FaVuejs } from "react-icons/fa";
 import { RiSvelteFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiAdonisjs, SiDocker, SiExpress, SiGit, SiGrafana, SiJavascript, SiMinio, SiMongodb, SiNestjs, SiNextdotjs, SiNodedotjs, SiNuxtdotjs, SiPhp, SiRabbitmq, SiTypescript } from "react-icons/si";
 import RevealAnimation from "./RevealAnimation";
+import { FaGolang } from "react-icons/fa6";
 
 const stacks = [{
     title: 'frontend',
@@ -72,6 +73,10 @@ const stacks = [{
         {
             label: 'NestJs',
             logo: <SiNestjs className="text-5xl text-[#e0234e]" />
+        },
+        {
+            label: "GoLang",
+            logo: <FaGolang className="text-5xl text-[#00add8]" />
         },
     ]
 }, {
