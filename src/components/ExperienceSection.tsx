@@ -3,62 +3,73 @@ import RevealAnimation from "./RevealAnimation";
 
 const experiences = [
     {
-        title: "Web Developer",
-        status: "Contract Freelance",
+        title: "Fullstack Web Developer",
+        status: "Full-time",
         company: "PT. Trisan Esa Cipta",
         location: "Palembang, Indonesia",
-        description:
-            "Developed a monorepo-based employee attendance and HR management system featuring face recognition authentication and location-based attendance validation using radius restrictions. The platform includes employee leave management, holiday scheduling, and workday management modules. Built the backend services using Express.js and TypeScript, admin dashboard using React.js, and mobile application using SolidJS with Capacitor. Integrated Python-based face recognition services for biometric attendance verification.",
+        descriptions: [
+            "Architected scalable backend microservices using Fastify (Node.js) and Go to power enterprise HR management and attendance tracking platforms.",
+            "Engineered an ML/AI verification pipeline combining Python (FastAPI) face recognition models with Vector Databases for sub-second biometric embedding matching.",
+            "Integrated LLM APIs via LangChain to build an automated policy assistant, allowing employees to query internal HR documentation via natural language.",
+            "Designed high-throughput RESTful endpoints and implemented Redis for distributed caching and session management, reducing API latency for concurrent clock-in requests.",
+            "Conducted database performance tuning and SQL query optimization on MySQL, leveraging indexes and query plan analysis (EXPLAIN ANALYZE) to maintain rapid execution times.",
+            "Containerized multi-tier backend services using Docker and established structured Git workflows for reliable cross-platform CI/CD deployments.",
+        ],
         startDate: "Jan 2026",
         endDate: "Present",
     },
     {
-        title: "Web Engineer",
-        status: "Contract Freelance",
+        title: "Distributed Systems Engineer",
+        status: "Full-time",
         company: "OXY Creative",
-        location: "South Jakarta, Indonesia",
-        description:
-            "Led the development of a web-based inventory management interface using Next.js, ensuring usability and responsiveness. Collaborated with QA and stakeholders for iterative feature improvements. Implemented a complete infrastructure observability system using modern monitoring tools and containerized deployment.",
+        location: "Jakarta Selatan, Indonesia",
+        descriptions: [
+            "Developed highly scalable distributed backend architectures using Go and Node.js (Express.js) to handle heavy inventory transactional flows.",
+            "Implemented inter-service communication using gRPC with Protocol Buffers, cutting inter-service latency and network overhead across internal microservices.",
+            "Orchestrated event streaming and asynchronous queue processing using RabbitMQ as a message broker to decouple service communications and real-time alerts.",
+            "Managed complex relational schemas on MySQL and PostgreSQL; resolved deadlocks and optimized query execution paths for high-frequency inventory write operations.",
+            "Leveraged Go's native concurrency primitives (goroutines, channels, and worker pools) to parallelize bulk inventory reconciliation workflows.",
+            "Collaborated with DevOps to deploy microservices on Kubernetes, configuring comprehensive observability through Prometheus, Grafana, Loki, and Grafana Alloy.",
+        ],
         startDate: "Sep 2024",
-        endDate: "Present",
+        endDate: "Dec 2025",
     },
     {
         title: "Fullstack Developer",
-        status: "Fulltime",
+        status: "Contract / Full-time",
         company: "PT. Immobi Solusi Prima",
-        location: "South Jakarta, Indonesia",
-        description:
-            "Built dynamic, component-based user interfaces for an internal dashboard platform using Next.js and Ant Design. Translated UI/UX mockups into responsive implementations. Developed features including iframe integration, SSO, and access control mechanisms for secure and seamless user experience.",
+        location: "Jakarta Selatan, Indonesia",
+        descriptions: [
+            "Delivered enterprise-grade fullstack web services for Telkomsel's centralized dashboard platform (AVP), integrating React, Next.js, and backend authentication microservices.",
+            "Built performant backend aggregation APIs connecting diverse data sources (PowerBI, Grafana, and relational datastores) with single sign-on (SSO) and RBAC security.",
+            "Employed a product-oriented mindset to translate stakeholder and enterprise client requirements into resilient backend pipelines capable of exporting large-scale datasets.",
+        ],
         startDate: "Mar 2024",
         endDate: "Jun 2025",
     },
     {
-        title: "Web Developer",
-        status: "Fulltime",
-        company: "PT. Trisan Esa Cipta",
-        location: "Palembang, Indonesia",
-        description:
-            "Developed an internal system for managing property development workflows, covering catalogs, construction progress, and sales. Built modules for inventory tracking, payroll scheduling, and procurement. Ensured consistency and integrity across multiple departments through well-defined backend logic.",
-        startDate: "Mar 2024",
-        endDate: "Jun 2025",
-    },
-    {
-        title: "Web Engineer",
-        status: "Fulltime",
+        title: "Software Engineer",
+        status: "Full-time",
         company: "OXY Creative",
-        location: "South Jakarta, Indonesia",
-        description:
-            "Engineered identity verification and onboarding solutions with civil registry and credit checking integrations. Designed asynchronous microservices for large-scale data processing and duplication detection. Prioritized scalability and fault tolerance in high-volume environments.",
+        location: "Jakarta Selatan, Indonesia",
+        descriptions: [
+            "Architected an event-driven microservices architecture processing millions of onboarding records across banking and rental identity validation platforms.",
+            "Engineered asynchronous pipeline workflows with RabbitMQ, guaranteeing fault-tolerant messaging, retry policies, and dead-letter queues.",
+            "Integrated national identity APIs (Dukcapil), credit assessment systems, and facial biometric verification pipelines using Python (Django / FastAPI).",
+            "Optimized high-volume transactional queries on PostgreSQL, implementing connection pooling, composite indexing, and database tuning to sustain heavy write loads.",
+        ],
         startDate: "Feb 2022",
         endDate: "Mar 2024",
     },
     {
         title: "Fullstack Developer",
-        status: "Fulltime",
+        status: "Full-time",
         company: "PT. Hedo Global Technology",
         location: "Palembang, Indonesia",
-        description:
-            "Built and maintained a warehouse management system with features like inventory tracking, order processing, and reporting. Synchronized stock data in real-time with external sales platforms. Optimized legacy backend systems for better performance and maintainability.",
+        descriptions: [
+            "Developed and maintained core warehouse management APIs, processing inventory movements, damaged goods returns, and automated e-commerce stock syncing.",
+            "Refactored legacy SQL queries and backend services, improving database throughput and minimizing data inconsistency across concurrent sales channels.",
+        ],
         startDate: "Feb 2021",
         endDate: "Feb 2022",
     },
@@ -104,9 +115,11 @@ const ExperienceSection = () => {
                                             {experience.endDate}
                                         </span>
                                     </div>
-                                    <p className="text-surface tracking-wider text-xl">
-                                        {experience.description}
-                                    </p>
+                                    <ul className="text-surface tracking-wider text-xl list-disc list-outside ms-4 space-y-2">
+                                        {experience.descriptions.map((desc, i) => (
+                                            <li key={i}>{desc}</li>
+                                        ))}
+                                    </ul>
                                 </RevealAnimation>
                             </div>
                         </div>

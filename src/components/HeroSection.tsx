@@ -23,17 +23,17 @@ const HeroSection = () => {
                 <div>
                     <div className="flex">
                         <RevealAnimation color="danger" slide>
-                            <h1 className="uppercase font-black text-7xl font-[Anton] tracking-wide text-accent">FullStack</h1>
+                            <h1 className="uppercase font-black text-7xl font-[Anton] tracking-wide text-accent">Backend</h1>
                         </RevealAnimation>
                     </div>
                     <div className="flex">
                         <RevealAnimation color="danger" slide>
-                            <h1 className="uppercase font-black text-7xl font-[Anton] tracking-wide text-surface ms-8">Developer</h1>
+                            <h1 className="uppercase font-black text-7xl font-[Anton] tracking-wide text-surface ms-8">Engineer</h1>
                         </RevealAnimation>
                     </div>
                     <RevealAnimation slide>
                         <p className="my-4">
-                            Hi! I'm <strong>{profile.name}</strong>. A passionate Fullstack Developer with {yearOfExperience}+ years of experience in building scalable, high-performance, and user-centric web applications — from crafting seamless frontend interfaces to developing robust backend systems.
+                            Hi! I'm <strong>{profile.name}</strong>. A product-oriented Backend Engineer / Fullstack Developer with {yearOfExperience}+ years of experience architecting scalable backend services, event-driven distributed systems, and high-throughput microservices — adept at translating complex business requirements into high-performance, fault-tolerant technical architectures.
                         </p>
                     </RevealAnimation>
                     <RevealAnimation slide>
