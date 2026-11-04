@@ -1,0 +1,575 @@
+/* ==========================================================================
+   Design tokens
+   Semua spacing memakai skala 4px, semua ukuran teks memakai skala tipe.
+   ========================================================================== */
+:root {
+  /* Warna: monokrom OLED + satu aksen biru */
+  --bg: #0a0a0a;
+  --bg-alt: #141414;
+  --text: #ededed;
+  --text-muted: #a3a3a3;
+  --text-faint: #6b6b6b;
+  --accent: #f5f5f5;
+  --accent-blue: #8ab4ff;
+  --accent-blue-soft: rgba(138, 180, 255, 0.14);
+  --border: #262626;
+  --border-strong: #333333;
+  --tag-bg: #161616;
+
+  /* Spacing (skala 4px) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+
+  /* Tipografi */
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: "Space Grotesk", var(--font-body);
+  --fs-xs: 0.75rem;    /* label section, copyright */
+  --fs-sm: 0.875rem;   /* meta: tanggal, perusahaan, kontak */
+  --fs-base: 1rem;     /* body: summary, bullet */
+  --fs-lg: 1.125rem;   /* judul job, subtitle hero */
+  --fs-h1: clamp(2.25rem, 1.5rem + 3.5vw, 3.25rem);
+
+  /* Layout */
+  --max-width: 760px;
+  --gutter: clamp(16px, 5vw, 24px);
+  --radius: 10px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --tap: 44px;         /* ukuran minimum area sentuh */
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sep {
+  color: var(--text-faint);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+  position: relative;
+  padding-block: var(--s-9) var(--s-8);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Grid halus + cahaya biru di sudut kanan atas, memudar ke bawah */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 10%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 10%, transparent 75%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse 50% 60% at 85% 10%, var(--accent-blue-soft), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--s-7);
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.hero-meta .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--accent-blue);
+}
+
+.hero h1 {
+  margin-top: var(--s-4);
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero .title {
+  margin-top: var(--s-3);
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  color: var(--text);
+}
+
+.hero .title .sep {
+  margin-inline: var(--s-1);
+}
+
+.hero .tagline {
+  max-width: 46ch;
+  margin-top: var(--s-4);
+  color: var(--text-muted);
+  font-size: var(--fs-base);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+}
+
+.hero-photo {
+  width: 184px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  padding: var(--s-1);
+  background: linear-gradient(160deg, var(--border-strong), transparent 60%);
+  box-shadow: 0 32px 64px -24px rgba(0, 0, 0, 0.8);
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: calc(var(--radius-lg) - var(--s-1));
+  object-fit: cover;
+  object-position: 50% 30%;
+  background: var(--bg-alt);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: var(--tap);
+  padding: var(--s-2) var(--s-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease),
+              border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: #ffffff;
+}
+
+.btn-secondary {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-faint);
+  background: var(--bg-alt);
+}
+
+.btn-icon {
+  width: var(--tap);
+  padding: 0;
+  border-color: var(--border-strong);
+  color: var(--text-muted);
+}
+
+.btn-icon:hover {
+  border-color: var(--text-faint);
+  background: var(--bg-alt);
+  color: var(--text);
+}
+
+/* ==========================================================================
+   Contact row (footer)
+   ========================================================================== */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-1) var(--s-3);
+  font-size: var(--fs-sm);
+}
+
+.contact-row a {
+  display: inline-flex;
+  align-items: center;
+  padding-block: var(--s-1);
+  overflow-wrap: anywhere;
+}
+
+.contact-row a + a::before {
+  content: "\00B7";
+  margin-right: var(--s-3);
+  color: var(--text-faint);
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+main {
+  padding-block: var(--s-7);
+}
+
+main > section + section {
+  margin-top: var(--s-7);
+}
+
+section h2 {
+  margin-bottom: var(--s-5);
+  padding-bottom: var(--s-3);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-faint);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Skills (dua kolom: label kiri, daftar kanan)
+   ========================================================================== */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--s-1) var(--s-5);
+  align-items: baseline;
+}
+
+.skill-row dt {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+}
+
+.skill-row dd {
+  margin: 0;
+  color: var(--text);
+  font-size: var(--fs-base);
+}
+
+/* ==========================================================================
+   Experience / Education (timeline)
+   ========================================================================== */
+.job {
+  position: relative;
+  padding-left: var(--s-5);
+  border-left: 2px solid var(--border);
+}
+
+.job + .job {
+  margin-top: var(--s-6);
+}
+
+.job::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.job-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-1) var(--s-4);
+}
+
+.job-head h3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.job-date {
+  color: var(--text-faint);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+
+.job-company {
+  margin-top: var(--s-1);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-style: italic;
+  overflow-wrap: anywhere;
+}
+
+.job-note {
+  margin-top: var(--s-3);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.job ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin-top: var(--s-3);
+  padding-left: var(--s-4);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  padding-block: var(--s-6) var(--s-7);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.copyright {
+  margin-top: var(--s-3);
+  color: var(--text-faint);
+  font-size: var(--fs-xs);
+}
+
+/* ==========================================================================
+   Scroll reveal
+   ========================================================================== */
+.reveal.js-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal.js-visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal.js-hidden,
+  .reveal.js-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn,
+  .btn:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   Mobile (≤ 600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .hero {
+    padding-block: var(--s-7) var(--s-6);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s-5);
+  }
+
+  /* Foto di atas, teks di bawah, keduanya rata kiri */
+  .hero-photo {
+    order: -1;
+    width: 112px;
+    border-radius: 22px;
+  }
+
+  .hero-photo img {
+    border-radius: calc(22px - var(--s-1));
+  }
+
+  .hero h1 {
+    margin-top: var(--s-3);
+  }
+
+  .hero .title {
+    font-size: var(--fs-base);
+  }
+
+  .hero-actions {
+    gap: var(--s-2);
+    margin-top: var(--s-5);
+  }
+
+  .btn-primary {
+    flex: 1 1 100%;
+  }
+
+  .btn-secondary {
+    flex: 1 1 auto;
+  }
+
+  /* Kontak footer jadi chip agar mudah disentuh dan tidak ada titik yatim saat wrap */
+  .contact-row {
+    gap: var(--s-2);
+  }
+
+  .contact-row a {
+    min-height: 36px;
+    padding: var(--s-1) var(--s-3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    background: var(--tag-bg);
+  }
+
+  .contact-row a + a::before {
+    content: none;
+  }
+
+  main {
+    padding-block: var(--s-6);
+  }
+
+  main > section + section {
+    margin-top: var(--s-6);
+  }
+
+  section h2 {
+    margin-bottom: var(--s-4);
+  }
+
+  .skills {
+    gap: var(--s-4);
+  }
+
+  .skill-row {
+    grid-template-columns: 1fr;
+  }
+
+  .job {
+    padding-left: var(--s-4);
+  }
+
+  .job + .job {
+    margin-top: var(--s-5);
+  }
+
+  .job-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-1);
+  }
+
+  .job-head h3 {
+    font-size: var(--fs-base);
+  }
+
+  .job-date {
+    white-space: normal;
+  }
+
+  .site-footer {
+    padding-block: var(--s-5) var(--s-6);
+  }
+}
