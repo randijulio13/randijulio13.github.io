@@ -44,6 +44,11 @@
   --radius-pill: 999px;
   --tap: 44px;         /* ukuran minimum area sentuh */
   --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Duration motion */
+  --t-fast: 160ms;
+  --t-med: 320ms;
+  --t-slow: 500ms;
 }
 
 /* ==========================================================================
@@ -145,6 +150,59 @@ a:focus-visible {
   z-index: -1;
   background: radial-gradient(ellipse 50% 60% at 85% 10%, var(--accent-blue-soft), transparent 70%);
   pointer-events: none;
+  animation: glow 20s var(--ease) infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-2%, 1%, 0) scale(1.06);
+  }
+}
+
+/* Entrance hero: satu rangkaian, berhenti setelah selesai */
+.hero-meta,
+.hero h1,
+.hero .title,
+.hero .tagline,
+.hero-actions {
+  animation: rise 560ms var(--ease) backwards;
+}
+
+.hero h1 {
+  animation-delay: 70ms;
+}
+
+.hero .title {
+  animation-delay: 140ms;
+}
+
+.hero .tagline {
+  animation-delay: 210ms;
+}
+
+.hero-actions {
+  animation-delay: 280ms;
+}
+
+.hero-photo {
+  animation: photo-in 700ms var(--ease) 120ms backwards;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
 }
 
 .hero-grid {
@@ -238,13 +296,18 @@ a:focus-visible {
   font-size: var(--fs-sm);
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s var(--ease), color 0.2s var(--ease),
-              border-color 0.2s var(--ease), transform 0.2s var(--ease);
+  transition: background var(--t-fast) var(--ease), color var(--t-fast) var(--ease),
+              border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 
 .btn:hover {
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: scale(0.98);
+  transition-duration: var(--t-fast);
 }
 
 .btn-primary {
@@ -254,6 +317,14 @@ a:focus-visible {
 
 .btn-primary:hover {
   background: #ffffff;
+}
+
+.btn-primary:hover .icon {
+  transform: translateY(2px);
+}
+
+.btn .icon {
+  transition: transform var(--t-fast) var(--ease);
 }
 
 .btn-secondary {
@@ -296,6 +367,16 @@ a:focus-visible {
   align-items: center;
   padding-block: var(--s-1);
   overflow-wrap: anywhere;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0 1px;
+  transition: background-size var(--t-med) var(--ease);
+}
+
+.contact-row a:hover {
+  text-decoration: none;
+  background-size: 100% 1px;
 }
 
 .contact-row a + a::before {
@@ -357,6 +438,29 @@ section h2 {
 /* ==========================================================================
    Experience / Education (timeline)
    ========================================================================== */
+.timeline {
+  position: relative;
+  background: linear-gradient(var(--border), var(--border)) left top / 2px 100% no-repeat;
+}
+
+/* Jejak terang yang menyusur garis saat di-scroll */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: var(--text-faint);
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+/* Garis di .job dipakai untuk blok di luar timeline (Education) */
+.timeline .job {
+  border-left-color: transparent;
+}
+
 .job {
   position: relative;
   padding-left: var(--s-5);
@@ -447,7 +551,54 @@ section h2 {
 .reveal.js-visible {
   opacity: 1;
   transform: none;
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+}
+
+/* ==========================================================================
+   Scroll progress (butuh animation-timeline; browser lama tidak menampilkannya)
+   ========================================================================== */
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  height: 2px;
+  background: var(--accent-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .progress {
+    display: block;
+    animation: progress linear;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Garis timeline tumbuh mengikuti scroll */
+@supports (animation-timeline: view()) {
+  .timeline::before {
+    animation: draw linear both;
+    animation-timeline: view();
+    animation-range: entry 12% cover 75%;
+  }
+}
+
+@keyframes draw {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -458,8 +609,29 @@ section h2 {
     transition: none;
   }
 
+  .progress {
+    display: none;
+  }
+
+  .timeline::before {
+    animation: none;
+  }
+
+  .hero-meta,
+  .hero h1,
+  .hero .title,
+  .hero .tagline,
+  .hero-actions,
+  .hero-photo,
+  .hero::after {
+    animation: none;
+  }
+
   .btn,
-  .btn:hover {
+  .btn:hover,
+  .btn:active,
+  .btn .icon,
+  .contact-row a {
     transition: none;
     transform: none;
   }
